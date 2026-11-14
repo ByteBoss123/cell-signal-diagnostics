@@ -1,0 +1,57 @@
+{
+ "cellsig_version": "1.0.0",
+ "python": "3.13.18",
+ "started_utc": "2026-11-14T00:06:43.533773+00:00",
+ "finished_utc": "2026-11-14T00:06:59.344425+00:00",
+ "params_sha256": "13ca4c5614b26e8f98dff1f24a13ea2308c8a412bb169127b370cec427bc2da2",
+ "staged_sha256": {
+  "ingest_dropped.parquet": "267242a557329bbd913a68d4a380eec3a57703668ae8f4cd82088af10d9bf318",
+  "nasa_impedance.parquet": "f26d6ecea87451a44a369def80c71af5e882210d06dd18cd5a44476443402583",
+  "telemetry_calce.parquet": "fd4aba0319d0b591be7f3faf14a25d112fd12bafeaaebe5f4b493470a640855a",
+  "telemetry_nasa.parquet": "5ad53455096cadada62958cc724e5a2084b8a6b4d5d03b8637a35369c2c6d742"
+ },
+ "data_quality": [
+  {
+   "name": "telemetry_quarantined_rows",
+   "severity": "warn",
+   "violations": 15,
+   "passed": false
+  },
+  {
+   "name": "quarantine_under_0.01pct",
+   "severity": "critical",
+   "violations": 0,
+   "passed": true
+  },
+  {
+   "name": "telemetry_duplicate_samples",
+   "severity": "critical",
+   "violations": 0,
+   "passed": true
+  },
+  {
+   "name": "mart_unique_cycle",
+   "severity": "critical",
+   "violations": 0,
+   "passed": true
+  },
+  {
+   "name": "mart_capacity_present",
+   "severity": "critical",
+   "violations": 0,
+   "passed": true
+  },
+  {
+   "name": "capacity_matches_instrument",
+   "severity": "critical",
+   "violations": 0,
+   "passed": true
+  },
+  {
+   "name": "calce_dcir_logger_limited",
+   "severity": "warn",
+   "violations": 1024,
+   "passed": false
+  }
+ ]
+}

@@ -1,0 +1,276 @@
+{
+ "telemetry": {
+  "rows": 3208363,
+  "cells": 8,
+  "sources": 2,
+  "cycles": 4557,
+  "duplicate_workbooks_dropped": 2
+ },
+ "signal_validation": {
+  "capacity_abs_err_ah_median": {
+   "NASA": 0.0076,
+   "CALCE": 0.0092
+  },
+  "capacity_abs_err_ah_p99": {
+   "NASA": 0.0185,
+   "CALCE": 0.0092
+  },
+  "capacity_cycles_compared": 4541,
+  "nasa_dcir_vs_eis_r": 0.835,
+  "nasa_dcir_eis_pairs": 579,
+  "calce_dcir_logger_limited_cycles": 1024,
+  "calce_cycles": 3921
+ },
+ "context": {
+  "labels": {
+   "ok": 4428,
+   "incomplete_charge": 108,
+   "too_few_samples": 16,
+   "truncated_discharge": 5
+  },
+  "incomplete_charge_cycles": 108,
+  "incomplete_charge_with_dip": 108,
+  "complete_charge_dips": 38,
+  "incomplete_charge_median_shortfall_ah": -0.1218,
+  "long_rest_cycles": 119,
+  "long_rest_capacity_above_baseline": 76,
+  "long_rest_median_gain_ah": 0.0143
+ },
+ "naive_vs_gated": {
+  "naive_two_sided_capacity_flags": 254,
+  "naive_flags_by_context": {
+   "ok": 141,
+   "incomplete_charge": 103,
+   "truncated_discharge": 5,
+   "too_few_samples": 5
+  },
+  "naive_flags_after_long_rest": 2,
+  "naive_flags_explained": 115,
+  "gated_rejects": 46
+ },
+ "detector": {
+  "k": 4.154,
+  "calibration_flag_rate_unmodified": 0.0101,
+  "calibration_n": 2085,
+  "holdout_flag_rate_unmodified": 0.011,
+  "holdout_n": 2263,
+  "holdout_flag_rate_ci95": [
+   0.007,
+   0.016
+  ],
+  "injected_cycles": 160,
+  "injected_variants": 1680
+ },
+ "injection": [
+  {
+   "fault": "capacity_fade_pct",
+   "size": 2.0,
+   "source": "CALCE",
+   "n": 80,
+   "detection_rate": 0.1,
+   "ci95_lo": 0.052,
+   "ci95_hi": 0.185,
+   "top_signal": "cap_ah"
+  },
+  {
+   "fault": "capacity_fade_pct",
+   "size": 2.0,
+   "source": "NASA",
+   "n": 80,
+   "detection_rate": 0.225,
+   "ci95_lo": 0.147,
+   "ci95_hi": 0.328,
+   "top_signal": "cap_ah"
+  },
+  {
+   "fault": "capacity_fade_pct",
+   "size": 4.0,
+   "source": "CALCE",
+   "n": 80,
+   "detection_rate": 0.475,
+   "ci95_lo": 0.369,
+   "ci95_hi": 0.583,
+   "top_signal": "cap_ah"
+  },
+  {
+   "fault": "capacity_fade_pct",
+   "size": 4.0,
+   "source": "NASA",
+   "n": 80,
+   "detection_rate": 0.588,
+   "ci95_lo": 0.478,
+   "ci95_hi": 0.689,
+   "top_signal": "cap_ah"
+  },
+  {
+   "fault": "capacity_fade_pct",
+   "size": 8.0,
+   "source": "CALCE",
+   "n": 80,
+   "detection_rate": 0.838,
+   "ci95_lo": 0.742,
+   "ci95_hi": 0.903,
+   "top_signal": "cap_ah"
+  },
+  {
+   "fault": "capacity_fade_pct",
+   "size": 8.0,
+   "source": "NASA",
+   "n": 80,
+   "detection_rate": 0.75,
+   "ci95_lo": 0.645,
+   "ci95_hi": 0.832,
+   "top_signal": "cap_ah"
+  },
+  {
+   "fault": "resistance_rise_mohm",
+   "size": 10.0,
+   "source": "CALCE",
+   "n": 80,
+   "detection_rate": 0.038,
+   "ci95_lo": 0.013,
+   "ci95_hi": 0.105,
+   "top_signal": "v_mean"
+  },
+  {
+   "fault": "resistance_rise_mohm",
+   "size": 10.0,
+   "source": "NASA",
+   "n": 80,
+   "detection_rate": 0.975,
+   "ci95_lo": 0.913,
+   "ci95_hi": 0.993,
+   "top_signal": "dcir_ohm"
+  },
+  {
+   "fault": "resistance_rise_mohm",
+   "size": 20.0,
+   "source": "CALCE",
+   "n": 80,
+   "detection_rate": 0.088,
+   "ci95_lo": 0.043,
+   "ci95_hi": 0.17,
+   "top_signal": "v_mean"
+  },
+  {
+   "fault": "resistance_rise_mohm",
+   "size": 20.0,
+   "source": "NASA",
+   "n": 80,
+   "detection_rate": 1.0,
+   "ci95_lo": 0.954,
+   "ci95_hi": 1.0,
+   "top_signal": "dcir_ohm"
+  },
+  {
+   "fault": "resistance_rise_mohm",
+   "size": 40.0,
+   "source": "CALCE",
+   "n": 80,
+   "detection_rate": 0.575,
+   "ci95_lo": 0.466,
+   "ci95_hi": 0.677,
+   "top_signal": "v_mean"
+  },
+  {
+   "fault": "resistance_rise_mohm",
+   "size": 40.0,
+   "source": "NASA",
+   "n": 80,
+   "detection_rate": 1.0,
+   "ci95_lo": 0.954,
+   "ci95_hi": 1.0,
+   "top_signal": "dcir_ohm"
+  },
+  {
+   "fault": "thermal_rise_c",
+   "size": 1.0,
+   "source": "NASA",
+   "n": 80,
+   "detection_rate": 0.438,
+   "ci95_lo": 0.334,
+   "ci95_hi": 0.547,
+   "top_signal": "temp_rise_c"
+  },
+  {
+   "fault": "thermal_rise_c",
+   "size": 2.0,
+   "source": "NASA",
+   "n": 80,
+   "detection_rate": 0.95,
+   "ci95_lo": 0.878,
+   "ci95_hi": 0.98,
+   "top_signal": "temp_rise_c"
+  },
+  {
+   "fault": "thermal_rise_c",
+   "size": 4.0,
+   "source": "NASA",
+   "n": 80,
+   "detection_rate": 1.0,
+   "ci95_lo": 0.954,
+   "ci95_hi": 1.0,
+   "top_signal": "temp_rise_c"
+  },
+  {
+   "fault": "voltage_offset_mv",
+   "size": 10.0,
+   "source": "CALCE",
+   "n": 80,
+   "detection_rate": 0.038,
+   "ci95_lo": 0.013,
+   "ci95_hi": 0.105,
+   "top_signal": "v_mean"
+  },
+  {
+   "fault": "voltage_offset_mv",
+   "size": 10.0,
+   "source": "NASA",
+   "n": 80,
+   "detection_rate": 0.112,
+   "ci95_lo": 0.06,
+   "ci95_hi": 0.2,
+   "top_signal": "v_mean"
+  },
+  {
+   "fault": "voltage_offset_mv",
+   "size": 20.0,
+   "source": "CALCE",
+   "n": 80,
+   "detection_rate": 0.062,
+   "ci95_lo": 0.027,
+   "ci95_hi": 0.138,
+   "top_signal": "v_mean"
+  },
+  {
+   "fault": "voltage_offset_mv",
+   "size": 20.0,
+   "source": "NASA",
+   "n": 80,
+   "detection_rate": 0.575,
+   "ci95_lo": 0.466,
+   "ci95_hi": 0.677,
+   "top_signal": "v_mean"
+  },
+  {
+   "fault": "voltage_offset_mv",
+   "size": 40.0,
+   "source": "CALCE",
+   "n": 80,
+   "detection_rate": 0.462,
+   "ci95_lo": 0.357,
+   "ci95_hi": 0.571,
+   "top_signal": "v_mean"
+  },
+  {
+   "fault": "voltage_offset_mv",
+   "size": 40.0,
+   "source": "NASA",
+   "n": 80,
+   "detection_rate": 0.925,
+   "ci95_lo": 0.846,
+   "ci95_hi": 0.965,
+   "top_signal": "v_mean"
+  }
+ ]
+}

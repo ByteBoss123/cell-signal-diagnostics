@@ -1,0 +1,40 @@
+# Detector settings. Changing any value changes params_sha256 in the run manifest.
+# Design changes made after the first run are listed in README (Changes after first run).
+cells:
+  NASA:  {rated_ah: 2.0, discharge_cutoff_v: {B0005: 2.7, B0006: 2.5, B0007: 2.2, B0018: 2.5}}
+  CALCE: {rated_ah: 1.1, discharge_cutoff_v: 2.7}
+
+split:                       # threshold is tuned on calibration cells only
+  calibration: [B0005, B0006, CS2_35, CS2_36]
+  holdout:     [B0007, B0018, CS2_37, CS2_38]
+
+context_rules:
+  incomplete_charge_c_rate: 0.25   # charge ended above 0.25C: CV taper never finished
+  truncated_discharge_v: 0.30      # discharge stopped > 0.30 V above its cutoff
+  long_rest_h: 12                  # a rest longer than this triggers capacity recovery
+  rest_recovery_cycles: 0          # tried 5 (keep post-rest cycles out of baseline); lowered calibration detection 55% -> 46%, so off
+  min_loaded_samples: 20
+
+detector:
+  warmup_cycles: 10
+  baseline_window: 20              # causal rolling median of accepted cycles
+  scale_window: 50                 # rolling MAD of accepted residuals
+  scale_floor: {cap_ah: 0.004, v_mean: 0.002, dcir_ohm: 0.0015, temp_rise_c: 0.25}
+  signals:
+    NASA:  {cap_ah: -1, v_mean: -1, dcir_ohm: 1, temp_rise_c: 1}   # sign = adverse direction
+    CALCE: {cap_ah: -1, v_mean: -1}                                # CALCE DCIR proxy is logger-limited
+  target_false_reject_rate: 0.01
+
+common_cause:                 # rejects shared across cells of one test rig
+  window_h: 24
+  n_perm: 2000
+  seed: 11
+
+injection:
+  seed: 7
+  cycles_per_cell: 40
+  faults:
+    capacity_fade_pct:   [2, 4, 8]
+    resistance_rise_mohm: [10, 20, 40]
+    voltage_offset_mv:   [10, 20, 40]
+    thermal_rise_c:      [1, 2, 4]     # NASA only (CALCE has no cell thermocouple)
